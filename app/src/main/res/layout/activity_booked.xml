@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sam.e_clinic.booked">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="107dp"
+        android:layout_height="91dp"
+        app:srcCompat="@drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="146dp"
+        android:layout_height="75dp"
+        android:text=" @nameofcaregiver booked by @nameofpatient"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="119dp" />
+</android.support.constraint.ConstraintLayout>

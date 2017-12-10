@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sam.e_clinic.Caregiverprofile">
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:layout_centerInParent = "true"
+        android:textSize = "25sp"
+        android:textColor = "#f00"
+        android:text="Caregiver profile:" />
+
+    <EditText
+        android:id="@+id/editText27"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView46"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="username"
+        android:inputType="textPersonName"
+        android:layout_toRightOf="@+id/textView51"
+        android:layout_toEndOf="@+id/textView51" />
+
+    <EditText
+        android:id="@+id/editText29"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText27"
+        android:gravity="center"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="county"
+        android:layout_alignLeft="@+id/editText27"
+        android:layout_alignStart="@+id/editText27" />
+
+    <EditText
+        android:id="@+id/editText30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText29"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="phone_number"
+        android:inputType="textPersonName|phone"
+        android:layout_alignLeft="@+id/editText29"
+        android:layout_alignStart="@+id/editText29" />
+
+    <EditText
+        android:id="@+id/editText31"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText30"
+        android:layout_alignStart="@+id/editText30"
+        android:layout_below="@+id/editText30"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText31"
+        android:layout_marginTop="12dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="update profile"
+        android:layout_toRightOf="@+id/textView54"
+        android:layout_toEndOf="@+id/textView54" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText29"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView46"
+        android:gravity="center"
+        android:layout_toLeftOf="@+id/textView46"
+        android:layout_toStartOf="@+id/textView46"
+        android:text="Username:" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText30"
+        android:layout_alignEnd="@+id/textView51"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:layout_alignRight="@+id/textView51"
+        android:layout_below="@+id/textView51"
+        android:text="County:" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText31"
+        android:layout_alignEnd="@+id/textView52"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textView52"
+        android:layout_alignTop="@+id/editText30"
+        android:gravity="center"
+        android:text="PhoneNumber" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button14"
+        android:layout_alignEnd="@+id/textView53"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textView53"
+        android:layout_below="@+id/textView53"
+        android:gravity="center"
+        android:text="Password:" />
+</RelativeLayout>
