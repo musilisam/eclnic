@@ -99,7 +99,7 @@ ListView listView;
                 super.onPostExecute(s);
                 pDialog.dismiss();
                 showthem(s);
-                Toast.makeText(Patienthistory.this, s, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Patienthistory.this, s, Toast.LENGTH_SHORT).show();
             }
 
 

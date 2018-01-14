@@ -96,8 +96,8 @@ public class Payment extends AppCompatActivity {
                 t22.setText(String.valueOf(alltotaltt));
 
 
-                Toast.makeText(Payment.this, "hoursnight", Toast.LENGTH_SHORT).show();
-                Toast.makeText(Payment.this, "hoursday", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Payment.this, "hoursnight", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Payment.this, "hoursday", Toast.LENGTH_SHORT).show();
 
 
             }

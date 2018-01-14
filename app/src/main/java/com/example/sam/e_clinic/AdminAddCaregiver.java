@@ -34,7 +34,7 @@ Button button5;
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name, county, certificationid, phonenumber, payday, paynight,password;
+                String name, county, certificationid, phonenumber, payday, paynight, password;
 
                 name=e10.getText().toString();
                 county=e11.getText().toString();
@@ -90,7 +90,7 @@ Button button5;
                 paramms.put("payday", payday);
                 paramms.put("paynight", paynight);
                 paramms.put("password", password);
-                String s = rh.sendPostRequest(URLs.main+"regcaregiver.php", paramms);
+                String s = rh.sendPostRequest(URLs.main+"caregiverregistration.php", paramms);
                 return s;
 
             }
@@ -102,6 +102,9 @@ Button button5;
             {
                 super.onPostExecute(s);
                 pDialog.dismiss();
+
+                Toast passs = Toast.makeText(AdminAddCaregiver.this,s, Toast.LENGTH_LONG);
+                passs.show();
 
                 if(s.equals("1"))
                 {

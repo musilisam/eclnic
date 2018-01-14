@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -70,11 +71,13 @@ public class patientapplications extends AppCompatActivity {
 
 
             @Override
-            protected void onPostExecute(String s) {
+            protected void onPostExecute(String s)
+            {
                 super.onPostExecute(s);
                 pDialog.dismiss();
                 showthem(s);
-               Toast.makeText(patientapplications.this, s, Toast.LENGTH_SHORT).show();
+                //new AlertDialog.Builder(patientapplications.this).setMessage(s).show();
+               //Toast.makeText(patientapplications.this, s, Toast.LENGTH_SHORT).show();
             }
 
 
@@ -100,18 +103,21 @@ public class patientapplications extends AppCompatActivity {
                 succes=jo.getString("success");
                 if (succes.equals("1"))
                 {
-                    String username, patient,date_of_request, location;
-
+                    String username, patient,date_of_request, location, description;
+                    String phone = jo.getString("phone");
                     username=jo.getString("username");
                     patient=jo.getString("patient");
                     date_of_request=jo.getString("date_of_request");
                     location=jo.getString("location");
+                    description=jo.getString("description");
 
                     HashMap<String, String> employees = new HashMap<>();
                     employees.put("username", username);
                     employees.put("patient", patient);
+                    employees.put("phone", phone);
                     employees.put("date_of_request", date_of_request);
                     employees.put("location", location);
+                    employees.put("description", description);
                     list.add(employees);
                 }
                 else
@@ -120,14 +126,7 @@ public class patientapplications extends AppCompatActivity {
                 }
 
 
-
-
-
             }
-
-
-
-
 
         } catch (JSONException e) {
 
@@ -143,8 +142,8 @@ public class patientapplications extends AppCompatActivity {
         }
 
         ListAdapter adapter = new SimpleAdapter(patientapplications.this, list, R.layout.layout2,
-                new String[]{"username", "patient","date_of_request","location"}, new int[]{R.id.textView10,
-                R.id.textView11,R.id.textView12,R.id.textView13});
+                new String[]{"username", "patient","date_of_request","location","description", "phone"}, new int[]{R.id.textView10,
+                R.id.textView11,R.id.textView12,R.id.textView13,R.id.textView58,R.id.textView56});
         listView.setAdapter(adapter);
 
 
@@ -154,13 +153,20 @@ public class patientapplications extends AppCompatActivity {
 //                TextView tt = (TextView)view.findViewById(R.id.textView5);
 //                final String user= tt.getText().toString();
 
+            TextView number = (TextView) view.findViewById(R.id.textView56);
+            final String num = number.getText().toString();
+
+
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(patientapplications.this);
                 builder.setMessage("Do you want to approve or cancel request? ");
                 builder.setTitle("Please confirm");
-                builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Approve via sms", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 //                        verify_caregiver(user);
+
+                        sendSMS("+254"+num, "Your request for caregiver services has been approved by "+user_id);
                     }
                 })
                         .setNegativeButton("Cancel", null)
@@ -169,5 +175,21 @@ public class patientapplications extends AppCompatActivity {
             }
         });
 
+    }
+
+
+
+    public void sendSMS(String phoneNo, String msg)
+    {
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNo, null, msg, null, null);
+            Toast.makeText(getApplicationContext(), "Message Sent",
+                    Toast.LENGTH_LONG).show();
+        } catch (Exception ex) {
+            Toast.makeText(getApplicationContext(),ex.getMessage().toString(),
+                    Toast.LENGTH_LONG).show();
+            ex.printStackTrace();
+        }
     }
 }

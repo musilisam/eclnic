@@ -38,7 +38,20 @@ public class Updatepayments extends AppCompatActivity {
 
                 Log.d("user_id", user_id);
 
-                updatepayments( payday, paynight);
+
+                if (payday.equals("") || paynight.equals("")) {
+
+                    Toast pass = Toast.makeText(Updatepayments.this, "Fill in all the fields", Toast.LENGTH_LONG);
+                    pass.show();
+
+
+                }
+
+                else
+
+                {
+                    updatepayments( payday, paynight);
+                }
 
 
             }

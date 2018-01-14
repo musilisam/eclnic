@@ -172,6 +172,7 @@ ListView listView;
                     phone_number=jo.getString("phone_number");
                     payday=jo.getString("payday");
                     paynight=jo.getString("paynight");
+//                    rating=jo.getString("rating");
 
                     HashMap<String, String> employees = new HashMap<>();
                     employees.put("username", username);
@@ -180,6 +181,9 @@ ListView listView;
                     employees.put("phone_number", phone_number);
                     employees.put("payday", payday);
                     employees.put("paynight", paynight);
+//                    employees.put("rating", rating);
+
+
                     list.add(employees);
                 }
                 else
@@ -211,8 +215,8 @@ ListView listView;
         }
 
         ListAdapter adapter = new SimpleAdapter(AdminVerify.this, list, R.layout.caregiver_list,
-                new String[]{"username", "county","payday","paynight","phone_number"}, new int[]{R.id.textView5,
-                R.id.textView7,R.id.textView19,R.id.textView9,R.id.textView8});
+                new String[]{"username", "county","payday","paynight","phone_number","rating"}, new int[]{R.id.textView5,
+                R.id.textView7,R.id.textView19,R.id.textView9,R.id.textView8,R.id.textView44});
         listView.setAdapter(adapter);
     }
 }

@@ -21,7 +21,7 @@ import static com.example.sam.e_clinic.PatientCaregiverList.usernameusername_car
 
 public class book extends AppCompatActivity
 {
-    EditText e4,e5,e6,e7;
+    EditText e4,e5,e6,e7,e32;
     Button button3;
     Button button12;
     TextView rate;
@@ -51,6 +51,7 @@ e4.setVisibility(View.GONE);
         e5 = (EditText) findViewById(R.id.editText5);
         e5.setVisibility(View.GONE);
         e6 = (EditText) findViewById(R.id.editText6);
+        e32 = (EditText) findViewById(R.id.editText32);
         e7 = (EditText) findViewById(R.id.editText7);
         e7.setText(cordinates);
         e7.setOnClickListener(new View.OnClickListener() {
@@ -72,20 +73,21 @@ e4.setVisibility(View.GONE);
         {
             @Override
             public void onClick(View view) {
-                String username, patient, date_of_request, location;
+                String username, patient, date_of_request, location, description;
                 username = user_id;//e4.getText().toString();
                 patient = user_id;//e5.getText().toString();
                 date_of_request = e6.getText().toString();
                 location = e7.getText().toString();
+                description = e32.getText().toString();
 
-                if (username.equals("") || patient.equals("") || date_of_request.equals("") || location.equals("")) {
+                if (username.equals("") || patient.equals("") || date_of_request.equals("") || location.equals("")|| description.equals("")) {
 
                     Toast pass = Toast.makeText(book.this, "Fill in all the fields", Toast.LENGTH_LONG);
                     pass.show();
 
 
                 } else {
-                    book(username, patient, date_of_request, location, user_id);
+                    book(username, patient, date_of_request, location, description, user_id);
                 }
             }
         });
@@ -122,9 +124,10 @@ e4.setVisibility(View.GONE);
     }
 
 
-    public void book(final String username, final String patient,
-                     final String date_of_request, final String location, final String caregiver) {
-        class GetJSON extends AsyncTask<Void, Void, String> {
+    public void book(final String username, final String patient, final String date_of_request, final String location, final String description, final String caregiver) {
+
+        class GetJSON extends AsyncTask<Void, Void, String>
+        {
 
             ProgressDialog pDialog;
 
@@ -146,6 +149,7 @@ e4.setVisibility(View.GONE);
                 paramms.put("patient", patient);
                 paramms.put("date_of_request", date_of_request);
                 paramms.put("location", location);
+                paramms.put("description", description);
                 paramms.put("caregiver",usernameusername_caregiver);
                 String s = rh.sendPostRequest(URLs.main + "book.php", paramms);
                 return s;

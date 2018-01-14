@@ -26,8 +26,10 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/textView46"
         android:ems="10"
+        android:focusable="false"
         android:gravity="center"
         android:hint="username"
+
         android:inputType="textPersonName"
         android:layout_toRightOf="@+id/textView51"
         android:layout_toEndOf="@+id/textView51" />

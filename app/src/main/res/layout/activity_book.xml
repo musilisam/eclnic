@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -48,10 +49,10 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button8"
         android:layout_alignStart="@+id/button8"
-        android:layout_below="@+id/editText6"
-        android:layout_marginTop="34dp"
+        android:layout_below="@+id/editText32"
         android:background="@color/colorPrimaryDark"
-        android:text="book" />
+        android:text="book"
+        android:textColor="#fff"/>
 
     <EditText
         android:id="@+id/editText7"
@@ -72,7 +73,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView14"
         android:layout_centerHorizontal="true"
-        android:text="pay" />
+        android:background="@color/colorPrimaryDark"
+        android:text="pay"
+        android:textColor="#fff"/>
 
     <TextView
         android:id="@+id/textView14"
@@ -101,5 +104,20 @@
         android:layout_alignLeft="@+id/button8"
         android:layout_alignStart="@+id/button8"
         android:layout_below="@+id/textView42"
-        android:text="rate" />
+        android:background="@color/colorPrimaryDark"
+        android:text="rate"
+        android:textColor="#fff"/>
+
+    <EditText
+        android:id="@+id/editText32"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editText7"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:hint="Description of the problem" />
+
 </RelativeLayout>

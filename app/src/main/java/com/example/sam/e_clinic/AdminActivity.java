@@ -108,7 +108,7 @@ public class AdminActivity extends AppCompatActivity
                 succes=jo.getString("success");
                 if (succes.equals("1"))
                 {
-                    String username, county,certid, phone_number, payday, paynight;
+                    String username, county,certid, phone_number, payday, paynight ,rating;
 
                     username=jo.getString("username");
                     county=jo.getString("county");
@@ -116,6 +116,7 @@ public class AdminActivity extends AppCompatActivity
                     phone_number=jo.getString("phone_number");
                     payday=jo.getString("payday");
                     paynight=jo.getString("paynight");
+                    rating=jo.getString("rating");
 
                     HashMap<String, String> employees = new HashMap<>();
                     employees.put("username", username);
@@ -124,6 +125,7 @@ public class AdminActivity extends AppCompatActivity
                     employees.put("phone_number", phone_number);
                     employees.put("payday", payday);
                     employees.put("paynight", paynight);
+                    employees.put("rating", rating);
                     list.add(employees);
                 }
                 else
@@ -155,8 +157,8 @@ public class AdminActivity extends AppCompatActivity
         }
 
         ListAdapter adapter = new SimpleAdapter(AdminActivity.this, list, R.layout.caregiver_list,
-                new String[]{"username", "county","payday","paynight","phone_number"}, new int[]{R.id.textView5,
-                R.id.textView7,R.id.textView19,R.id.textView9,R.id.textView8});
+                new String[]{"username", "county","payday","paynight","phone_number","rating"}, new int[]{R.id.textView5,
+                R.id.textView7,R.id.textView19,R.id.textView9,R.id.textView8,R.id.textView44});
         listView.setAdapter(adapter);
     }
 }

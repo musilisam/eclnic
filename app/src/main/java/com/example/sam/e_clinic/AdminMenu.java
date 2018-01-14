@@ -65,8 +65,7 @@ public class AdminMenu extends AppCompatActivity {
 
                         "View CareGiver List",
                         "Verify caregiver applications",
-                        "Search Caregiver",
-                        "Edit profile",
+                        "Delete caregiver",
 
 
                 };
@@ -82,9 +81,8 @@ public class AdminMenu extends AppCompatActivity {
 
 
                 R.drawable.list,
-                R.drawable.update,
-                R.drawable.search,
-                R.drawable.edit,
+                R.drawable.verify,
+                R.drawable.delete,
 
         };
 
@@ -121,14 +119,8 @@ public class AdminMenu extends AppCompatActivity {
 //                                Toast.makeText(AdminMenu.this, "Coming soon", Toast.LENGTH_SHORT).show();
                                 break;
                             case 2:
-                                Toast.makeText(AdminMenu.this, "Coming soon", Toast.LENGTH_SHORT).show();
-
-//                                startActivity(new Intent(AdminMenu.this, SearchCaregiver.class));
-                                break;
-                            case 3:
-                                Toast.makeText(AdminMenu.this, "Coming soon", Toast.LENGTH_SHORT).show();
-
-//                                startActivity(new Intent(AdminMenu.this, Editprofile.class));
+//                                Toast.makeText(AdminMenu.this, "Coming soon", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(AdminMenu.this,Delete.class));
                                 break;
 
 //                    Toast.makeText(AdminMenu.this, "Coming soon", Toast.LENGTH_SHORT).show();

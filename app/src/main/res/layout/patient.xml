@@ -12,7 +12,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/caregiver" />
+        app:srcCompat="@drawable/patient" />
 
     <TextView
         android:id="@+id/textView28"

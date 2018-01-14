@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="15dp"
     android:background="@color/GhostWhite"
     >
 
@@ -64,7 +65,9 @@
         android:layout_alignBottom="@+id/textView10"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Username:" />
+        android:text="Username:"
+        android:layout_alignRight="@+id/textView38"
+        android:layout_alignEnd="@+id/textView38" />
 
     <TextView
         android:id="@+id/textView38"
@@ -74,8 +77,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView37"
         android:text="Patient:"
-        android:layout_toLeftOf="@+id/textView10"
-        android:layout_toStartOf="@+id/textView10" />
+        android:layout_toLeftOf="@+id/textView12"
+        android:layout_toStartOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView39"
@@ -98,7 +101,53 @@
         android:layout_toLeftOf="@+id/textView12"
         android:layout_toStartOf="@+id/textView12" />
 
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView56"
+        android:layout_alignBottom="@+id/textView56"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Phone"
+        android:layout_toLeftOf="@+id/textView56"
+        android:layout_toStartOf="@+id/textView56" />
 
+    <TextView
+        android:id="@+id/textView56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView13"
+        android:layout_marginTop="18dp"
+        android:layout_toEndOf="@+id/textView40"
+        android:layout_toRightOf="@+id/textView40"
+        android:gravity="center"
+        android:text="TextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textView57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView40"
+        android:text="Description:"
+        android:layout_toLeftOf="@+id/textView13"
+        android:layout_toStartOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView58"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView56"
+        android:layout_alignStart="@+id/textView56"
+        android:layout_below="@+id/textView13"
+        android:text="TextView"
+        android:gravity="center"
+        android:layout_alignRight="@+id/textView13"
+        android:layout_alignEnd="@+id/textView13" />
 
 
 </RelativeLayout>

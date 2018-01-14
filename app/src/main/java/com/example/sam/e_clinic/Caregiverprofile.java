@@ -56,7 +56,11 @@ public class Caregiverprofile extends AppCompatActivity {
                 else
 
                 {
-                    editprofile( phone_number,username,county,password);
+                    editprofile(username,county,phone_number,password);
+//                    final String username,
+//                    final String county,
+//                    final String phone_number,
+//                    final String password)
                 }
 
 
@@ -179,7 +183,11 @@ public class Caregiverprofile extends AppCompatActivity {
 
 
 
-    public void editprofile( final String username, final String county, final String phone_number, final String password)
+    public void editprofile(
+            final String username,
+            final String county,
+            final String phone_number,
+            final String password)
     {
 
         class GetJSON extends AsyncTask<Void, Void, String> {
@@ -204,7 +212,6 @@ public class Caregiverprofile extends AppCompatActivity {
                 paramms.put("county", county);
                 paramms.put("phone_number", phone_number);
                 paramms.put("password", password);
-
                 paramms.put("username", user_id);
                 Log.d("params", String.valueOf(paramms));
                 String s = rh.sendPostRequest(URLs.main+"caregiverprofile.php", paramms);
@@ -219,8 +226,7 @@ public class Caregiverprofile extends AppCompatActivity {
             {
                 super.onPostExecute(s);
                 pDialog.dismiss();
-//                Toast.makeText(Caregiverprofile.this, s, Toast.LENGTH_SHORT).show();
-
+                new AlertDialog.Builder(Caregiverprofile.this).setMessage(String.valueOf(s)).show();
                 if(s.equals("1"))
                 {
 //                   new SweetAlertDialog(SignUp.this, SweetAlertDialog.SUCCESS_TYPE).setContentText("Registration success. Please sign in to continue.")
